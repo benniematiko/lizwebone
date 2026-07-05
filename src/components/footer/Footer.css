@@ -1,0 +1,134 @@
+/* src/components/footer/Footer.css */
+
+.global-footer {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 5rem 0 0 0; /* Leaves space for bottom bar underneath */
+  border-top: 3px solid var(--accent-color);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+/* Column Configuration */
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+
+.brand-column h2 {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: 400;
+  vertical-align: super;
+}
+
+.brand-desc {
+  color: #c5d1e0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Links Columns */
+.footer-column h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-column ul a {
+  color: #c5d1e0;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.footer-column ul a:hover {
+  color: #ffffff;
+  padding-left: 4px; /* Subtle elegant shift on hover */
+}
+
+/* Contact Column details */
+.contact-column p {
+  color: #c5d1e0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-directs {
+  margin-top: 0.5rem;
+}
+
+.footer-directs strong {
+  color: var(--accent-color);
+}
+
+/* Bottom Bar Alignment Rules */
+.footer-bottom-bar {
+  background-color: #061224; /* Deepened dark background */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 2rem;
+}
+
+.footer-bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #8da2bb;
+}
+
+.legal-notices-links a {
+  color: #8da2bb;
+  transition: var(--transition);
+}
+
+.legal-notices-links a:hover {
+  color: #ffffff;
+}
+
+.legal-notices-links .divider {
+  margin: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Responsive Structural Wrapping */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .footer-bottom-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}

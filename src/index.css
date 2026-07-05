@@ -1,0 +1,35 @@
+/* src/index.css */
+:root {
+  --primary-color: #0c2340;    /* Deep Navy Blue (Authority) */
+  --accent-color: #a3704c;     /* Muted Gold/Bronze (Premium) */
+  --text-dark: #222222;        /* Off-black for high legibility */
+  --text-light: #666666;       /* Charcoal for secondary text */
+  --bg-light: #f9f9f9;         /* Soft light gray for alternate sections */
+  --border-color: #e5e5e5;     /* Clean, subtle lines */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', sans-serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  line-height: 1.6;
+}
+
+h1, h2, h3, .serif-font {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

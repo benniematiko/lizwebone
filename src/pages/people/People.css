@@ -1,0 +1,193 @@
+/* src/pages/people/People.css additions/updates */
+
+.people-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.people-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.people-subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.people-header h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+.people-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Structural Control Styling Zone */
+.filter-control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.search-box-wrapper {
+  flex: 1;
+  max-width: 450px;
+  min-width: 280px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-light);
+  outline: none;
+  border-radius: 0; /* Ensures crisp architectural lines */
+  transition: var(--transition);
+}
+
+.search-input:focus {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+}
+
+.filter-tabs-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-tab {
+  background-color: #ffffff;
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0; /* Box structural alignment */
+  transition: var(--transition);
+}
+
+.filter-tab:hover {
+  border-color: var(--primary-color);
+}
+
+.filter-tab.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+/* Grid Framework Styling */
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+}
+
+.people-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.people-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--primary-color);
+}
+
+.people-image-wrapper {
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+  background-color: var(--bg-light);
+}
+
+.people-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.people-card-info {
+  padding: 1.5rem;
+}
+
+.people-card-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.people-role {
+  font-size: 0.9rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.25rem;
+}
+
+.people-profile-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+
+.people-profile-link:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* Empty State Handling block */
+.no-results-panel {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .filter-control-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .search-box-wrapper {
+    max-width: 100%;
+  }
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+}

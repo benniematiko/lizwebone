@@ -1,0 +1,322 @@
+/* src/components/Navbar.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 1000;
+  height: 80px;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between; /* Pushes logo to left, menu to right */
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+.logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: 400;
+  vertical-align: super;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.nav-item {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-light);
+  padding: 0.5rem 0;
+  position: relative;
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+/* Mixed utility for non-link clickable dropdown tags */
+.mixed-dropdown-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+/* Elegant bottom line slide-in effect on hover & active state */
+.nav-item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent-color);
+  transition: var(--transition);
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+
+.nav-item:hover,
+.nav-item.active {
+  color: var(--primary-color);
+}
+
+/* Call to Action Button styling */
+.nav-btn {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid var(--primary-color);
+  transition: var(--transition);
+  text-decoration: none;
+  border-radius: 0; /* Strict square edge alignment */
+}
+
+.nav-btn:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+/* Dropdown Structural Anchors */
+.dropdown-trigger-node {
+  position: relative; /* Context anchor for the nested list absolute placement */
+}
+
+.arrow-indicator {
+  font-size: 0.65rem;
+  margin-left: 4px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: transform var(--transition);
+}
+
+.dropdown-trigger-node:hover .arrow-indicator,
+.arrow-indicator.rotated {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Container Structural Box styling */
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  list-style: none;
+  min-width: 240px;
+  padding: 1rem 0;
+  z-index: 1000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 0;
+}
+
+.nav-dropdown-menu li {
+  width: 100%;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-dropdown-menu a:hover {
+  background-color: var(--bg-light);
+  color: var(--primary-color);
+  padding-left: 1.75rem; /* Subtle elegant slide in shift on hover state */
+}
+
+/* Hamburger Toggle Button Trigger */
+.hamburger-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.hamburger-bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+/* Mobile Viewport Breakpoint Adjustments */
+@media (max-width: 768px) {
+  .hamburger-toggle {
+    display: flex;
+  }
+
+  /* Turn the hamburger icons white when the drawer is open so they stay visible over the dark menu */
+  .hamburger-toggle.open .hamburger-bar {
+    background-color: #ffffff;
+  }
+
+  .hamburger-toggle.open .hamburger-bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-toggle.open .hamburger-bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-toggle.open .hamburger-bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Right-to-Left Dark Sliding Drawer Menu */
+  .navbar-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    background-color: #1a1a1a; /* Premium dark background color */
+    flex-direction: column;
+    padding: 6rem 2.5rem 2rem 2.5rem;
+    gap: 1.5rem;
+    align-items: flex-start;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
+    
+    /* Smooth sliding dynamics */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    display: flex; 
+  }
+
+  .navbar-links.mobile-active {
+    transform: translateX(0);
+  }
+
+  /* Mobile text overrides for standard items */
+  .navbar-links .nav-item {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    width: 100%;
+    display: block;
+  }
+
+  .navbar-links .nav-item:hover,
+  .navbar-links .nav-item.active {
+    color: #ffffff;
+  }
+
+  .dropdown-trigger-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  /* Mobile Context Collapse Dropdown List Container Box styling */
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background-color: #242424; /* Slightly lighter dark panel for nesting visibility */
+    width: 100%;
+    text-align: left;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+  }
+  
+  .nav-dropdown-menu a {
+    padding: 0.65rem 1.25rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .nav-dropdown-menu a:hover {
+    background-color: #2e2e2e;
+    color: #ffffff;
+    padding-left: 1.5rem; 
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+    background-color: var(--accent-color, #ffffff); /* Fallback to clean white outline button on dark */
+    color: #1a1a1a;
+    border-color: var(--accent-color, #ffffff);
+  }
+
+  .nav-btn:hover {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+/* --- Refined Brand Logo Typography --- */
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1.1;
+}
+
+.logo-brand {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: 1.5px;
+}
+
+.logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  vertical-align: baseline;
+}
+
+/* Crisp responsiveness adjustment for small screen footprints */
+@media (max-width: 400px) {
+  .logo-brand {
+    font-size: 1.1rem;
+  }
+  .logo-sub {
+    font-size: 0.58rem;
+    letter-spacing: 1.5px;
+  }
+}

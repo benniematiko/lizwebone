@@ -1,0 +1,437 @@
+/* src/pages/home/Home.css updates/extensions */
+
+.home-wrapper {
+  width: 100%;
+}
+
+.hero-section {
+  position: relative;
+  min-height: 80vh; /* Adjust height profile as needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+/* Dark tint overlay to make your legal firm typography stand out elegantly */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* Tweak opacity here if the photo is too bright/dark */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  color: #ffffff;
+}
+
+
+
+.hero-tag {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content h1 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+/*color: #D4AF37;  Clean, premium legal gold tone */
+}
+
+
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: #c5d1e0;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--transition);
+  border-radius: 0; /* Box profiles style */
+}
+
+.btn-primary {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #ffffff;
+  color: var(--primary-color);
+}
+
+/* About Section */
+.home-about-section {
+  background-color: var(--bg-light);
+  padding: 6rem 2rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-container h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* Featured Insights Section Layer */
+.featured-insights-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+}
+
+.section-header-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+}
+
+.section-tag {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.section-header-split h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.section-action-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.section-action-link:hover {
+  color: var(--accent-color);
+}
+
+.featured-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.featured-insight-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card-meta {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.insight-category {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.insight-date {
+  color: var(--text-light);
+}
+
+.featured-insight-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.featured-insight-card p {
+  color: var(--text-dark);
+  line-height: 1.7;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.read-more-accent {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 2px;
+  transition: var(--transition);
+}
+
+.read-more-accent:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Mobile Alignment adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .featured-insights-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .section-header-split {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+
+/* Why Choose Us Section Layout Rules */
+.why-us-section {
+  background-color: #ffffff;
+  padding: 6rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.why-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.why-us-header {
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+.why-us-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: var(--primary-color);
+  margin-top: 0.5rem;
+}
+
+.why-us-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.why-us-card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  padding: 3rem 2rem;
+  transition: var(--transition);
+  border-radius: 0; /* Flat edge aesthetic matching buttons */
+}
+
+
+
+.why-us-card:hover {
+  /* Removed border-color update so it stays static */
+  background-color: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+.pillar-index {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.25rem;
+}
+
+.why-us-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.why-us-card p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Responsiveness Adaptation for Mobile Viewports */
+@media (max-width: 900px) {
+  .why-us-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .why-us-card {
+    padding: 2rem;
+  }
+}
+
+
+/* Homepage Team Spotlight Grid Layout Rules */
+.home-team-section {
+  background-color: var(--bg-light);
+  padding: 6rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.home-team-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  border-radius: 0; /* Ensures consistent sharp corporate edge */
+}
+
+.home-team-card:hover {  
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* Monogram Avatar Profile Box */
+.partner-avatar-fallback {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+.partner-card-details {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.partner-card-details h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--primary-color);
+  margin-bottom: 0.25rem;
+}
+
+.partner-card-role {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.partner-card-expertise {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.partner-card-link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.25rem;
+  align-self: flex-start;
+  transition: var(--transition);
+}
+
+.partner-card-link:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+/* Responsiveness adjustments for stacked mobile presentation */
+@media (max-width: 900px) {
+  .home-team-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .partner-avatar-fallback {
+    height: 220px;
+  }
+}

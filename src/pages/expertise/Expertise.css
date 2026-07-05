@@ -1,0 +1,114 @@
+/* src/pages/expertise/Expertise.css */
+
+.expertise-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+.expertise-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.expertise-subtitle {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-color);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.expertise-header h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-family: var(--font-serif);
+}
+
+.expertise-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Practice Multi-Column Architecture */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+}
+
+.practice-card {
+  background-color: var(--bg-light);
+  border: 1px solid var(--border-color);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.practice-card:hover {
+  border-color: var(--primary-color);
+  background-color: #ffffff;
+}
+
+.practice-card h2 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.25rem;
+  font-family: var(--font-serif);
+}
+
+.practice-card p {
+  color: var(--text-dark);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+/* Specialties Section Styling */
+.specialties-tags-zone h4 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.tags-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.spec-tag {
+  font-size: 0.85rem;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+  border-radius: 0; /* Strict edge styling configuration */
+}
+
+.practice-card:hover .spec-tag {
+  background-color: var(--bg-light);
+}
+
+/* Responsiveness Adaptations */
+@media (max-width: 900px) {
+  .expertise-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .practice-card {
+    padding: 2rem;
+  }
+}
