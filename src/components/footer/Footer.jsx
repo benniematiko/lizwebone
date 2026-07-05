@@ -29,8 +29,8 @@ export default function Footer() {
 
         <div className="footer-column contact-column">
           <h3>Nairobi Headquarters</h3>
-          <p>ACK Garden Annex, 6th Floor</p>
-          <p>1st Ngong Avenue, Nairobi</p>
+          <p>5th Avenue, Office Suites, 5th Floor</p>
+          <p>Ngong Avenue, Nairobi</p>
           <p className="footer-directs"><strong>T:</strong> +254-715-860-031</p>
           <p className="footer-directs"><strong>E:</strong> legal@karuiruadvocates.co.ke</p>
         </div>
